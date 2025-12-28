@@ -3,8 +3,11 @@
     <Appenders>
         <KafkaAppender name="Kafka" topic="logs-topic">
             <PatternLayout pattern="%d{ISO8601} %-5p %c - %m%n"/>
+            <Properties>
+                <Property name="bootstrap.servers" value="localhost:9092"/>
+                <Property name="client.id" value="log-sender"/>
+            </Properties>
         </KafkaAppender>
-
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{ISO8601} %-5p %c - %m%n"/>
         </Console>
