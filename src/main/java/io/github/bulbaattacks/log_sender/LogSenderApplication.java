@@ -1,13 +1,14 @@
 package io.github.bulbaattacks.log_sender;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-@SpringBootApplication
 public class LogSenderApplication {
+	private static final Logger logger = LogManager.getLogger(LogSenderApplication.class);
 
 	public static void main(String[] args) {
-		SpringApplication.run(LogSenderApplication.class, args);
+		logger.info("Приложение стартовало!");
+		logger.warn("Это тестовое предупреждение.");
+		logger.error("Это тестовая ошибка.");
 	}
-
 }
